@@ -1,5 +1,6 @@
 require 'spec_helper'
 require './lib/dmv'
+require './lib/facility'
 
 RSpec.describe Dmv do
   before(:each) do
@@ -17,7 +18,7 @@ RSpec.describe Dmv do
   end
 
   describe '#add facilities' do
-    xit 'can add available facilities' do
+    it 'can add available facilities' do
       expect(@dmv.facilities).to eq([])
       @dmv.add_facility(@facility_1)
       expect(@dmv.facilities).to eq([@facility_1])
@@ -25,7 +26,7 @@ RSpec.describe Dmv do
   end
 
   describe '#facilities_offering_service' do
-    xit 'can return list of facilities offering a specified Service' do
+    it 'can return list of facilities offering a specified Service' do
       @facility_1.add_service('New Drivers License')
       @facility_1.add_service('Renew Drivers License')
       @facility_2.add_service('New Drivers License')
