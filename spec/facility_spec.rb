@@ -48,10 +48,12 @@ RSpec.describe Facility do
     end
   end
 
-  describe 'register vehicle' do
-    it 'can register vehicles' do
-      @facility.register_vehicle("Car")
-      expect(@facility.registered_vehicles).to eq(["Car"])
-    end
+  it 'can register vehicles when service is available' do
+    @vehicle1 = Vehicle.new({ vin: '123456789abcdefgh', year: 2015, make: 'Ford', model: 'Focus', engine: :ice })
+    @facility.add_service("Vehicle Registration")
+
+    @facility.register_vehicle(@vehicle1)
+    expect(@facility.registered_vehicles).to eq([@vehicle1])
   end
+  
 end

@@ -16,12 +16,10 @@ class Facility
     @services << service
   end
 
-  def collected_fees
-    @collected_fees
-  end
-
   def register_vehicle(vehicle)
     @registered_vehicles << vehicle
+    fee = vehicle.fees
+    @collected_fees += fee
   end
 
 end
