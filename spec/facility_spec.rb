@@ -25,7 +25,7 @@ RSpec.describe Facility do
       expect(@facility.services).to eq(['New Drivers License', 'Renew Drivers License', 'Vehicle Registration'])
     end
   end
-  describe '' do
+  describe 'registered vehicles' do
     it 'can check registered vehicles' do
       facility_1 = Facility.new({name: 'DMV Tremont Branch', address: '2855 Tremont Place Suite 118 Denver CO 80205', phone: '(720) 865-4600'})
       cruz = Vehicle.new({vin: '123456789abcdefgh', year: 2012, make: 'Chevrolet', model: 'Cruz', engine: :ice} )
@@ -33,6 +33,16 @@ RSpec.describe Facility do
 
 
       expect(facility_1.registered_vehicles).to eq []
+    end
+  end
+  describe 'collect fees' do
+    it 'collect fees' do
+      facility_1 = Facility.new({name: 'DMV Tremont Branch', address: '2855 Tremont Place Suite 118 Denver CO 80205', phone: '(720) 865-4600'})
+      cruz = Vehicle.new({vin: '123456789abcdefgh', year: 2012, make: 'Chevrolet', model: 'Cruz', engine: :ice} )
+      facility_1.add_service('Vehicle Registration')
+
+
+      expect(facility_1.collected_fees).to eq (0)
     end
   end
 end

@@ -14,4 +14,8 @@ class Facility
     @services << service
   end
 
+  def collected_fees
+    collected_fees = 0
+  end
+
 end
