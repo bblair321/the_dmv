@@ -1,5 +1,4 @@
 class Dmv
-
   def initialize
     @facilities = []
   end
@@ -9,7 +8,8 @@ class Dmv
   end
 
   def facilities_offering_service(service)
-    @facilities.find do |facility|
+    # Using `.select` to get all matching facilities
+    @facilities.select do |facility|
       facility.services.include?(service)
     end
   end
