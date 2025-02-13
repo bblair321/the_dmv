@@ -1,5 +1,5 @@
 class Facility
-  attr_reader :name, :address, :phone, :services, :registered_vehicles
+  attr_reader :name, :address, :phone, :services, :registered_vehicles, :collected_fees
 
   def initialize(attributes)
     # switched to a hash instead of individual arguments
@@ -19,8 +19,8 @@ class Facility
     @collected_fees
   end
 
-  def register_vehicle
-    @registered_vehicles << register_vehicle
+  def register_vehicle(vehicle)
+    @registered_vehicles << vehicle
   end
 
 end

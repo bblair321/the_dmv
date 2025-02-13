@@ -49,13 +49,9 @@ RSpec.describe Facility do
   end
 
   describe 'register vehicle' do
-    it 'register vehicle' do
-      facility_1 = Facility.new({name: 'DMV Tremont Branch', address: '2855 Tremont Place Suite 118 Denver CO 80205', phone: '(720) 865-4600'})
-      cruz = Vehicle.new({vin: '123456789abcdefgh', year: 2012, make: 'Chevrolet', model: 'Cruz', engine: :ice} )
-      facility_1.add_service('Vehicle Registration')
-
-
-      expect(facility_1.register_vehicle).to eq 
+    it 'can register vehicles' do
+      @facility.register_vehicle("Car")
+      expect(@facility.registered_vehicles).to eq(["Car"])
     end
   end
 end
