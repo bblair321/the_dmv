@@ -9,6 +9,7 @@ class Vehicle
     @make = vehicle_details[:make]
     @model = vehicle_details[:model]
     @engine = vehicle_details[:engine]
+    # added the registration_date to vehicle_details hash
     @registration_date = vehicle_details[:registration_date]
   end
 
