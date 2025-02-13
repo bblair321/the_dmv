@@ -56,4 +56,13 @@ RSpec.describe Facility do
     expect(@facility.registered_vehicles).to eq([@vehicle1])
   end
   
+  it 'collected fees' do
+    @vehicle1 = Vehicle.new({ vin: '123456789abcdefgh', year: 2015, make: 'Ford', model: 'Focus', engine: :ice })
+    @facility.add_service("Vehicle Registration")
+
+    @facility.register_vehicle(@vehicle1) # Regular: $100
+
+    expect(@facility.collected_fees).to eq(100)
+  end
+
 end
