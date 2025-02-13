@@ -35,10 +35,16 @@ RSpec.describe Vehicle do
   end
   describe 'registration date' do
     it 'get registration date' do
-      @cruz = Vehicle.new({vin: '123456789abcdefgh',year: 2012,make: 'Chevrolet',model: 'Cruz',engine: :ice,registration_date: '2023-03-13'  # Fixed the syntax error
-    })
+      @cruz = Vehicle.new({vin: '123456789abcdefgh',year: 2012,make: 'Chevrolet',model: 'Cruz',engine: :ice,registration_date: '2023-03-13'})
+      
       expect(@cruz.registration_date).to eq('2023-03-13')
-
+    end
+  end
+  describe 'plate type' do
+    it 'get plate type' do
+      @cruz = Vehicle.new({vin: '123456789abcdefgh',year: 2012,make: 'Chevrolet',model: 'Cruz',engine: :ice,registration_date: '2023-03-13',plate_type: 'regular'})
+      
+      expect(@cruz.registration_date).to eq('2023-03-13')
     end
   end
 end
