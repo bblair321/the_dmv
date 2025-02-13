@@ -1,5 +1,5 @@
 class Facility
-  attr_reader :name, :address, :phone, :services, :registered_vehicles, :collected_fees
+  attr_reader :name, :address, :phone, :services, :registered_vehicles, :collected_fees, :plate_type
 
   def initialize(attributes)
     # switched to a hash instead of individual arguments
@@ -9,6 +9,7 @@ class Facility
     @services = []
     @registered_vehicles = []
     @collected_fees = 0
+    @plate_type = []
   end
 
   def add_service(service)
