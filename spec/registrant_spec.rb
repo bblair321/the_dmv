@@ -12,4 +12,16 @@ RSpec.describe Registrant do
 
     expect(registrant_1.name).to eq("Bruce")
   end
+
+  it 'is a registrant age' do
+    registrant_1 = Registrant.new('Bruce', 18, true )
+
+    expect(registrant_1.age).to eq 18
+  end
+
+  it 'is a registrant permit' do
+    registrant_1 = Registrant.new('Bruce', 18, true )
+
+    expect(registrant_1.permit).to eq true
+  end
 end
