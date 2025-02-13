@@ -22,7 +22,7 @@ RSpec.describe Registrant do
   it 'is a registrant permit' do
     registrant_1 = Registrant.new('Bruce', 18, true )
 
-    expect(registrant_1.permit).to eq true
+    expect(registrant_1.permit?).to eq true
   end
 
   it 'is a registrant license data' do
