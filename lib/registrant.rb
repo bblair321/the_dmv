@@ -1,4 +1,4 @@
-class Registrant #created registrant class
+class Registrant
   attr_reader
   def initialize(name,age,permit,license_data)
     @name = name
