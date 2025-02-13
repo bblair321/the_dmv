@@ -8,6 +8,7 @@ class Facility
     @phone = attributes[:phone]
     @services = []
     @registered_vehicles = []
+    @collected_fees = 0
   end
 
   def add_service(service)
@@ -15,7 +16,11 @@ class Facility
   end
 
   def collected_fees
-    collected_fees = 0
+    @collected_fees
+  end
+
+  def register_vehicle
+    @registered_vehicles << register_vehicle
   end
 
 end
