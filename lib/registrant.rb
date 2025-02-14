@@ -16,4 +16,8 @@ class Registrant
   def license_info
     @license_data[type] = status
   end
+
+  def administer_written_test
+    
+  end
 end
