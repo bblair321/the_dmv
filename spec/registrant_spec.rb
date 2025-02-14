@@ -31,6 +31,18 @@ RSpec.describe Registrant do
     expect(registrant_1.license_data).to eq({})
   end
 
+  it 'is registrant at least 16' do
+    registrant = Registrant.new('Bruce', 18, true)
+    expect(registrant.administer_written_test).to eq(true)
+    expect(registrant.license_data[:written]).to eq(true)
+  end
+
+  it 'if registrant is under 16' do
+    registrant = Registrant.new('Penny', 15, true)
+    expect(registrant.administer_written_test).to eq(false)
+    expect(registrant.license_data[:written]).to eq(false)
+  end
+
   xit 'is a registrant earn permit' do
     registrant_1 = Registrant.new('Bruce', 18, true )
 

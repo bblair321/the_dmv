@@ -7,6 +7,7 @@ class Registrant
     @age = age
     @permit = permit
     @license_data = license_data
+
   end
 
   def permit?  
@@ -18,6 +19,15 @@ class Registrant
   end
 
   def administer_written_test
-    
+    # if @age is greater than or equal to 16 and permit is true than the registrant passes the written test
+    # if any condition is false they fail the test
+    if @age >= 16 && @permit
+      #we are updating the license_data hash with the key written and the value true
+      @license_data[:written] = true
+      true
+    else
+      @license_data[:written] = false
+      false
+    end
   end
 end
