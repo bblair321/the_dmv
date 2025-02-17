@@ -25,7 +25,7 @@ class Facility
   def administer_written_test(registrant)
     # Check if the facility offers the "Written Test" service and if the registrant is eligible
     if @services.include?("Written Test") && registrant.permit?
-      registrant.earn_permit
+      registrant.pass_written_test
       true
     else
       false
