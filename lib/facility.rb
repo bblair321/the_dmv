@@ -22,4 +22,30 @@ class Facility
     @collected_fees += fee
   end
 
+  def administer_written_test(registrant)
+    # Check if the facility offers the "Written Test" service and if the registrant is eligible
+    if @services.include?("Written Test") && registrant.permit?
+      registrant.earn_permit
+      true
+    else
+      false
+    end
+  end
+
+  def administer_road_test(registrant)
+    if @services.include?("Road Test")
+      true
+    else
+      false
+    end
+  end
+
+  def renew_drivers_license(registrant)
+    if @services.include?("License Renewal")
+      true
+    else
+      false
+    end
+  end
+
 end

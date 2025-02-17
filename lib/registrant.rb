@@ -18,7 +18,7 @@ class Registrant
     @license_data[type] = status
   end
 
-  def administer_written_test
+  def earn_permit
     # if @age is greater than or equal to 16 and permit is true than the registrant passes the written test
     # if any condition is false they fail the test
     if @age >= 16 && @permit
